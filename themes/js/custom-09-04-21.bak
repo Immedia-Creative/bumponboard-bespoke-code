@@ -1,0 +1,9 @@
+jQuery(document).ready(function($){
+	
+// Add play button to modal videos
+$('.ult-modal-img, .testimonial-image, .full-video img').each(function(){
+var $modalImage = $(this);
+	$modalImage.after( '<i class="far fa-play-circle"></i>' );
+});
+	
+});
