@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bump on Board</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: transparent;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .card {
+            border: none;
+        }
+
+        .owl-carousel {
+            max-width: 350px;
+            align-self: center;
+        }
+
+        .cancel,
+        .add-list {
+            width: 100%;
+        }
+
+
+
+        .btn-list {
+			font-size: 16px;
+			font-weight: 500;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			padding-left: 14px;
+			padding-right: 14px;
+			font-family: 'Work Sans', sans-serif;
+			color: #141212;
+			background-color: #F9644D;
+			border-radius: 4px;
+			border: 1px solid #F9644D;
+			-webkit-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+		}
+		.btn-list:hover, 
+		.btn-list:focus {
+			background-color: #FDC2B9;
+			border:1px solid #FDC2B9;
+			-webkit-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+		}
+
+
+        .owl-carousel .item {
+            margin: 3px;
+        }
+
+        .owl-carousel .item img {
+            display: block;
+            width: 100%;
+            height: 300px;
+            object-fit:contain
+        }
+
+        .owl-carousel .item {
+            margin: 3px
+        }
+
+        .owl-carousel {
+            margin-bottom: 15px
+        }
+
+        .owl-dots .owl-dot.active span,
+        .owl-dots .owl-dot:hover span {
+            background: #fe6c61;
+        }
+        .alert{
+            display: none;
+        }
+
+        .owl-carousel .item {
+            text-align: center;
+        }
+        @media screen and (max-width:990px) {
+            .carousel-slider {
+                text-align: -webkit-center
+            }
+
+            .main-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="launch-modal-button btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch Modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center mb-5 logo">
+                                <img src="BOB-logo-Dark-Grey.png" alt="logo" width="70px">
+                                <span class="logo-text">Bump on Board</span>
+                            </div>
+
+                            <div class="row main-container">
+                                <div class="col carousel-slider">
+                                    <div class="owl-carousel owl-img-responsive">
+                                        <div class="item"> <img
+                                                src="https://m.media-amazon.com/images/I/B1TjtdebCGS.png" id="bob-product-image" alt="image" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" id="bob-product-title"
+                                            placeholder="Enter Page Title">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="price">Price</label>
+                                        <input type="text" class="form-control" id="bob-product-price" placeholder="$299" >
+                                    </div>
+                                    <div>
+                                        <label for="price">List Name</label>
+                                        <select id ="bob-list" class="form-select form-select-md mb-2"
+                                            aria-label=".form-select-md example">
+                                        </select>
+                                    </div>
+                                        <input type="hidden" class="form-control" id="bob-product-location" >
+                                        <input type="hidden" class="form-control" id="bob-user-id" >
+                                        <input type="hidden" class="form-control" id="bob-base-url" >
+                                </div>
+                            </div>
+                            <div class="alert alert-success">
+                                <strong>Success!</strong> Product saved successfully.
+                            </div>
+                            <div class="alert alert-danger">
+                                <strong>Fail!</strong> Unable to save data.
+                            </div>
+                            <div class="row mt-3">
+                                
+                                <div class="col">
+                                    <button class="btn-list add-list p-2" id = "bob-save-product">Add to List</button>
+                                </div>
+								<div class="col">
+                                    <button class="btn btn-cancel cancel p-2">Cancel</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+
+
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                    crossorigin="anonymous"></script>
+                <!-- jquery -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+                <!-- owl carousel -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+                    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+                    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <script>
+                    $(document).ready(function () {
+
+                       let y = document.getElementById('bumponboard_iframe');    
+                        var loc = window.location.toString();
+                        params = loc.split('?&=bob')[1];
+                        let data = params.split("&=bob");
+                        console.log("params", data);
+
+                        document.getElementById("bob-product-title").value = decodeURI(data[0]);
+                        document.getElementById("bob-product-price").value = decodeURI(data[1]);
+                        document.getElementById("bob-product-image").src = decodeURI(data[2]);
+                        document.getElementById("bob-product-location").src = decodeURI(data[3]);
+                        document.getElementById("bob-user-id").value = decodeURI(data[4]);
+                        document.getElementById("bob-base-url").value = decodeURI(data[5]);
+                        
+                        let bob_user_id = decodeURI(data[4]);
+                        var request = new XMLHttpRequest();
+
+                        request.open("GET", decodeURI(data[5])+"wp-content/plugins/list-api/list-api.php?id="+ bob_user_id, true);
+                        // request.setRequestHeader('Access-Control-Allow-Origin', '*');
+                        // request.setRequestHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT');
+                        request.setRequestHeader('Access-Control-Allow-Origin', 'https://www.myntra.com');
+                        request.setRequestHeader('Access-Control-Allow-Credentials', true);
+                        request.setRequestHeader('Access-Control-Expose-Headers', 'FooBar');
+                        request.setRequestHeader('Content-Type', 'text/html');
+                        request.setRequestHeader('charset', 'utf-8');
+                        let obj = {};
+                        let options = "";
+                        request.onreadystatechange = function () {
+                            var done = 4, ok = 200;
+                            if (request.readyState == done && request.status == ok) {
+                                if (request.responseText) {
+                                    obj = JSON.parse(request.responseText);
+                                    console.log(obj);
+                                    obj.data.forEach((element, index) => {
+                                        options += `<option value="${element[0]}" > ${element[1]}</option> `
+
+                                    });
+                                    document.getElementById('bob-list').insertAdjacentHTML("beforeend", options)
+                                    console.log(options);
+                                }
+                            }
+                        };
+                        request.send(null);
+                    });
+                </script>
+                <script>
+                    $(".owl-carousel").owlCarousel({
+                        margin: 10,
+                        responsive: {
+                            0: {
+                                items: 1,
+                            },
+                            600: {
+                                items: 1,
+                            },
+                            1000: {
+                                items: 1,
+                            },
+                        },
+                    });
+                </script>
+                <script>
+                    $(document).ready(function () {
+                        $('.launch-modal-button').hide();
+                        $(".modal").modal("show");
+                        var baseurl = window.location.origin;
+
+                        $('#bob-save-product').click(function (params) {
+
+                            let currentBaseUrl = document.getElementById("bob-base-url").value;
+
+                            var data = new FormData();
+                            data.append('title', document.getElementById("bob-product-title").value);
+                            data.append('price', document.getElementById("bob-product-price").value);
+                            data.append('category', document.getElementById("bob-list").value);
+                            data.append('image', document.getElementById("bob-product-image").src);
+                            data.append('location', document.getElementById("bob-product-location").src);
+                            data.append('user_id', document.getElementById("bob-user-id").value);
+                            
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', `${currentBaseUrl}wp-json/gift-picker/api/v1/create`, true);
+                            xhr.onload = function () {
+                                // do something to response
+                                let res = JSON.parse(this.responseText);
+                                console.log(JSON.parse(this.responseText));
+                                if(res.status == 200 && res.success == true){
+                                    $(".alert-success").show();
+                                    setTimeout(() => {
+                                        $(".modal").modal("hide"); 
+                                        window.location.href = document.getElementById("bob-product-location").src;
+                                    }, 2000);
+                                }else{
+                                    $(".alert-danger").show();
+                                    setTimeout(() => {
+                                    $(".alert-danger").hide();
+                                    window.location.href = document.getElementById("bob-product-location").src;
+                                    }, 2000);
+                                }
+                            };
+                            xhr.send(data);
+                        })
+                        $(".btn-cancel").click(function () {
+                            // alert(document.getElementById("bob-product-location").src)
+                            $(".modal").modal("hide");
+                            window.location.href = document.getElementById("bob-product-location").src;
+                            // var ele = document.getElementById('bumponboard_iframe');
+                            
+                            console.log(parent.document.getElementById('bumponboard_iframe'));
+                        });
+                    });
+                </script>
+
+</body>
+
+</html>
